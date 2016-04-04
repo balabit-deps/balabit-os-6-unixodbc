@@ -1,5 +1,3 @@
-ACLOCAL_AMFLAGS=-I libltdl/m4
-
 SUBDIRS = \
 	extras \
 	log \
@@ -39,7 +37,7 @@ EXTRA_DIST = \
     Makefile.svn
 
 install-data-am:
+	-mkdir -p $(DESTDIR)${sysconfdir}/ODBCDataSources
 	-touch $(DESTDIR)${sysconfdir}/odbcinst.ini
 	-touch $(DESTDIR)${sysconfdir}/odbc.ini
-	-mkdir -p $(DESTDIR)${sysconfdir}/ODBCDataSources
 	cp unixodbc_conf.h $(DESTDIR)${includedir}/unixodbc_conf.h
